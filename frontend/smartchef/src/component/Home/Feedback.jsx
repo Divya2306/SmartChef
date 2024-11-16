@@ -28,10 +28,12 @@ const Feedback = () => {
   };
 
   return (
-    <div className="feedback-page">
-        <Link to="/" className="back-button" >
+    <div className="feedback-container">
+      <Link to="/" className="back-button" >
         <img src={back} width="10%"/>
       </Link>
+    <div className="feedback-page">
+        
       <h2>Feedback</h2>
 
       {/* Feedback Form */}
@@ -80,6 +82,7 @@ const Feedback = () => {
           ))
         )}
       </div> */}
+    </div>
     </div>
   );
 };

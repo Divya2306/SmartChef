@@ -1,17 +1,33 @@
-import React, { useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate, Link } from "react-router-dom"
 import '../Home/styles.css';
 import videoSrc from '../Home/video.mp4';
 import 'remixicon/fonts/remixicon.css';
+import { toast } from 'react-toastify';
 
 const HomePage = () => {
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
     useEffect(() => {
-        // Locomotive animation code here
-        // Navbar animation code here
-        // Loading animation code here
-        // Video container animation code here
-        // Cursor animation code here
+        const userStatus = localStorage.getItem('token');
+        // console.log(localStorage.getItem('token'));
+        if (userStatus) {
+            setIsLoggedIn(true);
+        }
+        
     }, []);
+
+    const handleLogout = () => {
+        // Remove the token from local storage
+        localStorage.removeItem("token");
+        localStorage.removeItem("userid");
+        setIsLoggedIn(false);
+      
+        // Provide feedback to the user
+        toast.success("Logged out successfully!");
+      
+    
+      };
+      
 
     return (
 
@@ -61,19 +77,21 @@ const HomePage = () => {
                 <div id="nav-part2">
 
                     <div id="links">
-                        {/* <Link to="/login">Login</Link>
-                        <Link to="#">SignUp</Link>
-                        <Link to="#">About Us</Link> */}
-                        {/* <a href="#">Login</a> */}
-                        <Link to="/login" className="text-[--dark] underline">Login</Link>
-                        <Link to="/signup" className="text-[--dark] underline">SignUp</Link>
+                        
+                        {/* <Link to="/login" className="text-[--dark] underline">Login</Link> */}
+                        {/* <Link to="/signup" className="text-[--dark] underline">SignUp</Link> */}
                         <Link to="/about" className="text-[--dark] underline">About Us</Link>
-                        <Link to="/feedback" className="text-[--dark] underline">Feedback</Link>
-                        {/* < href="/about">About Us</> */}
+                        {isLoggedIn ? <Link to="/feedback" className="text-[--dark] underline">Feedback</Link> : ""}
+                        {isLoggedIn ? (
+                            <button className="text-[--dark] underline" onClick={handleLogout}>Logout</button>
+                        ) : (
+                            <Link to="/login" className="text-[--dark] underline">Login</Link>
+                        )}
                     </div>
                     <div id="icons">
-                        <i className="ri-menu-fill"></i>
-                        <i className="ri-restaurant-2-line"></i>
+                        {isLoggedIn ? (<Link to="/profile" className="text-[--dark] underline"><i className="fa-solid fa-user"></i></Link>) : 
+                        ""}
+                        <Link to="/randomrecipes" className="text-[--dark] underline"><i className="ri-restaurant-2-line"></i></Link>
                     </div>
                 </div>
             </div>

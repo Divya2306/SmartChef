@@ -5,6 +5,9 @@
     /* background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ6IWlubOuipzDNGKIVOlvdopXV3lqO8VkgqA&s"); */
     font-family: Arial, sans-serif;
     background-color: #ffe8f6b4;
+    background-image: url('../images/back2.jpg');
+    background-size: cover;
+    background-position: center;
   }
   
   .about-title {
@@ -44,6 +47,7 @@
     text-align: center;
     max-width: 250px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.5);
   }
   
   .card:hover {

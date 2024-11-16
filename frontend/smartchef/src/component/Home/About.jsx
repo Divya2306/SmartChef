@@ -1,5 +1,6 @@
 import React from "react";
 import "./About.css";
+import divya from "../images/divyaChef.jpg";
 import unknown from "../images/unknown.jpg";
 import { Link } from "react-router-dom";
 import back from "../images/back.png";
@@ -25,7 +26,7 @@ const About = () => {
         {/* Team member 1 */}
         <div className="card">
           <div className="card-image-container">
-            <img src={unknown} alt="Team Member 1" className="card-img" />
+            <img src={divya} alt="Team Member 1" className="card-img" />
           </div>
           <h3>Divya</h3>
           {/* <p className="card-role">Project Lead</p>

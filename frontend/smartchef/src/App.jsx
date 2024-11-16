@@ -43,6 +43,8 @@ import Signup from './component/Home/Signup.jsx';
 import UploadImage from './component/Home/UploadImage';
 import About from './component/Home/About.jsx';
 import Feedback from './component/Home/Feedback.jsx';
+import Profile from './component/Home/Profile.jsx';
+import RandomRecipes from './component/Home/RandomRecipes.jsx';
 
 
 function App() {
@@ -56,6 +58,8 @@ function App() {
           <Route path="/uploadImage" element={<UploadImage />} />
           <Route path="/about" element={<About />} />
           <Route path="/feedback" element={<Feedback />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/randomrecipes" element={<RandomRecipes />} />
           {/* <Route path="/signup" element={<Signup />} />
           <Route path="/home" element={<Home />} />
           <Route path="/room" element={<Room />} />
