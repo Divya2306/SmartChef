@@ -1,6 +1,8 @@
 import React from "react";
 import "./About.css";
 import divya from "../images/divyaChef.jpg";
+import madhura from "../images/madhura.jpg";
+import bhavya from "../images/bhavya.jpg";
 import unknown from "../images/unknown.jpg";
 import { Link } from "react-router-dom";
 import back from "../images/back.png";
@@ -38,7 +40,7 @@ const About = () => {
         {/* Team member 2 */}
         <div className="card">
           <div className="card-image-container">
-            <img src={unknown} alt="Team Member 2" className="card-img" />
+            <img src={madhura} alt="Team Member 2" className="card-img" />
           </div>
           <h3>Madhura Jituri</h3>
           {/* <p className="card-role">Backend Developer</p>
@@ -50,7 +52,7 @@ const About = () => {
         {/* Team member 3 */}
         <div className="card">
           <div className="card-image-container">
-            <img src={unknown} alt="Team Member 3" className="card-img" />
+            <img src={bhavya} alt="Team Member 3" className="card-img" />
           </div>
           <h3>Bhavya Malik</h3>
           {/* <p className="card-role">Frontend Developer</p>
